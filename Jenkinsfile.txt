@@ -4,12 +4,12 @@ pipeline {
             stage('Init') {
                   steps {
                         echo 'Hi, this is Rina'
-                        echo 'We are Starting the Testing'
+                        echo 'We are initialising the project'
                   }
             }
             stage('Build') {
                   steps {
-                        echo 'Building Sample Maven Project'
+                        echo 'Building the Project'
                   }
             }
             stage('Deploy Staging Environment') {
