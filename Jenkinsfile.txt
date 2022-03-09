@@ -1,15 +1,20 @@
 pipeline {
       agent any
       stages {
-            stage('Init') {
+            stage('checkout SCM') {
                   steps {
-                        echo 'Hi, this is Rina from your team'
-                        echo 'We are initialising the project'
+                  echo 'pulling the latest commit'
+                      
                   }
             }
-            stage('Build') {
+                  stage('Creating Docker image') {
                   steps {
-                        echo 'Building the Project'
+                        echo "docker image is creating"
+                  }
+            }
+            stage('Deploy Test Environment') {
+                  steps {
+                        echo 'Building the Project for testing'
                   }
             }
             stage('Deploy Staging Environment') {
@@ -22,10 +27,6 @@ pipeline {
                         echo "Deploying in Production Area"
                   }
             }
-             stage('Creating Docker image') {
-                  steps {
-                        echo "docker image is creating"
-                  }
-            }
+
       }
 }
